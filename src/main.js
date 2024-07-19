@@ -10,15 +10,17 @@ const formEl = document.querySelector('#search_img');
 const inputEl = document.querySelector('#search_img input');
 
 const searchImg = () => {
-    const searchQuery = inputEl.value;
+    const searchQuery = inputEl.value.trim();
     fetchImages(searchQuery)
         .then(images => {
-            if (searchQuery.length === 0) {
+            console.log(images);
+            if (images.length === 0) {
                 toggleLoader();
                 iziToast.warning({
                     title: 'Warning',
                     message: 'Sorry, there are no images matching your search query. Please try again!',
                     color: 'red',
+                    position: 'bottomRight',
                 });
                 return;
             }
@@ -27,7 +29,7 @@ const searchImg = () => {
             new SimpleLightbox('.images-list a', {
                 captionsData: 'alt',
                 captionDelay: 250,
-            }); formEl.reset();
+            }).refresh(); formEl.reset();
 
         }).catch(err => {
             toggleLoader();
@@ -35,6 +37,7 @@ const searchImg = () => {
                 title: 'Error',
                 message: `Something went wrong: ${err.message}`,
                 color: 'red',
+                position: 'bottomRight',
             });
         });
 

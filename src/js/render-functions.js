@@ -2,15 +2,15 @@ const imageList = document.querySelector('.images-list');
 const loaderEl = document.querySelector('.loader');
 
 export const renderImages = (images) => {
-    const gallery = images.map(({
-        webformatURL,
-        largeImageURL,
-        tags,
-        likes,
-        views,
-        comments,
-        downloads
-    }) => `<li class="images-item">
+  const gallery = images.map(({
+    webformatURL,
+    largeImageURL,
+    tags,
+    likes,
+    views,
+    comments,
+    downloads
+  }) => `<li class="images-item">
         <a class="gallery-link" href="${largeImageURL}">
           <img
             class="gallery-image"
@@ -27,13 +27,12 @@ export const renderImages = (images) => {
         </a>
       </li>`).join('');
 
-    imageList.insertAdjacentHTML('beforeend', gallery);
+  imageList.insertAdjacentHTML('beforeend', gallery);
 
 }
 
 export const clearResult = () => imageList.innerHTML = '';
 export const toggleLoader = (show = false) => {
-    if (show) return loaderEl.classList.add('loader-open');
-
-    loaderEl.classList.remove('loader-open');
+  if (show) return loaderEl.classList.add('loader-open');
+  loaderEl.classList.remove('loader-open');
 }
