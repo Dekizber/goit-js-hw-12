@@ -2,7 +2,7 @@ const imageList = document.querySelector('.images-list');
 const loaderEl = document.querySelector('.loader');
 
 export const renderImages = (images) => {
-  const gallery = images.map(({
+  const gallery = images.hits.map(({
     webformatURL,
     largeImageURL,
     tags,
@@ -27,7 +27,9 @@ export const renderImages = (images) => {
         </a>
       </li>`).join('');
 
+
   imageList.insertAdjacentHTML('beforeend', gallery);
+
 
 }
 

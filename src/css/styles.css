@@ -64,6 +64,32 @@
   background-color: #6c8cff;
 }
 
+.loadBtn {
+  display: none;
+  margin: 0 auto;
+  margin-bottom: 44px;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 125px;
+  height: 40px;
+  border: 0;
+  background-color: #4e75ff;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  color: #fff;
+  transition: background-color 350ms;
+}
+
+.loadBtn:hover {
+  background-color: #6c8cff;
+}
+
+.loadBtn-open {
+  display: block;
+}
+
 .images-list {
   width: 100%;
   display: flex;
@@ -71,6 +97,7 @@
   flex-wrap: wrap;
   gap: 24px;
   margin: 0 auto;
+  margin-bottom: 32px;
 }
 
 .images-item {
